@@ -1,0 +1,25 @@
+{
+  "name": "req_device",
+  "version": "1.0.0",
+  "description": "",
+  "main": "request.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugs/req_device.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eugs/req_device/issues"
+  },
+  "homepage": "https://github.com/eugs/req_device#readme",
+  "devDependencies": {
+    "request": "^2.83.0"
+  },
+  "dependencies": {
+    "curl-request": "^1.1.1"
+  }
+}
