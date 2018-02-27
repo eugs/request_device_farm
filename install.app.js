@@ -4,8 +4,8 @@ const fs = require('fs');
 function installApp(appPath, udid, accessKey, deviceName) {
   console.log('attempt to install:', appPath, 'to:', deviceName, '(', udid, ')...');
 
-  if(!fs.existsSync(appPath)) {
-    throw new Error('\n!not exists: ' + appPath);
+  if(!fs.existsSync(__dirname + appPath)) {
+    throw new Error('\n!not exists: ' + __dirname + appPath);
   }
 
   const data = {
