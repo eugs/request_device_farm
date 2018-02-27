@@ -1,6 +1,6 @@
 const request = require('request');
 
-let requestDevice = function(caps) {
+let requestDevice = function(caps, accessKey) {
   console.log('attempt to find device with caps:\n', JSON.stringify(caps) +'...');
 
   let opts = {
@@ -10,7 +10,7 @@ let requestDevice = function(caps) {
     body: caps,
     headers: {
       Accept: 'application/json',
-      Authorization: 'Bearer '+ process.env.ACCESS_KEY,
+      Authorization: 'Bearer '+ accessKey,
     },
   }
 

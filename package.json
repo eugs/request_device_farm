@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/eugs/req_device#readme",
   "devDependencies": {
-    "request": "^2.83.0"
+
   },
   "dependencies": {
-    "curl-request": "^1.1.1"
+    "request": "^2.83.0",
+    "curl-request": "^1.1.1",
+    "minimist": "^1.2.0"
   }
 }

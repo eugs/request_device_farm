@@ -1,15 +1,17 @@
 const requestDevice = require('./device.requestor');
 const installApp = require('./curl.install');
+const minimist = require('minimist');
 
-const appPath = './app-release.apk';
-// const appPath = './benefits.ipa';
-const capabilities = {
-  desiredCapabilities: {
-    platformName:'android',
-  }
+//parse cmd params
+let params =  minimist(process.argv.slice(2));
+const KEY = (params.key) ? params.key : process.env.ACCESS_KEY;
+
+capabilities = {
+  desiredCapabilities : params
 }
 
-  requestDevice(capabilities)
+
+  requestDevice(capabilities, KEY)
 
   .then((response) => {
     console.log('response with:', response);
@@ -18,11 +20,12 @@ const capabilities = {
   .then((response) => {
     let device = response.desiredCapabilities;
     console.log('find device with id:', device.udid);
-    return installApp(device.udid, appPath, device.deviceName);
+    return installApp(params.app, device.udid, KEY, device.deviceName);
   })
   .then((response) => {
     console.log('result:', response.headers.result);
-    return 0;
+    console.log('return caps:', capabilities);
+    return capabilities;
   })
   .catch((error) => {
     console.log('!ERROR:', error);

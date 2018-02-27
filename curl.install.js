@@ -1,12 +1,12 @@
 const curl = new (require( 'curl-request' ))();
 
-function installApp(udid, appPath, deviceName) {
+function installApp(appPath, udid, accessKey, deviceName) {
   console.log('attempt to install:', appPath, 'to:', deviceName, '(', udid, ')...');
 
   return new Promise((resolve, reject) => {
     return curl.setHeaders([
         'Content-Type: multipart/form-data',
-        'Authorization: Bearer '+ process.env.ACCESS_KEY,
+        'Authorization: Bearer '+ accessKey,
     ])
 
     .setMultipartBody([
