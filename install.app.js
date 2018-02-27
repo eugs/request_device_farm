@@ -9,7 +9,7 @@ function installApp(appPath, udid, accessKey, deviceName) {
   }
 
   const data = {
-    file: fs.createReadStream(__dirname + '/app.apk'),
+    file: fs.createReadStream(__dirname + appPath),
   };
   console.log('read stream created for', appPath + '...');
 
