@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "request": "^2.83.0",
-    "curl-request": "^1.1.1",
     "minimist": "^1.2.0"
   }
 }
