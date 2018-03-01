@@ -1,6 +1,9 @@
 const deviceRequestor = require('./device.requestor');
 const installApp = require('./install.app');
 const minimist = require('minimist');
+const fs = require('fs');
+
+const filePath = './device.json';
 
 let device;
 
@@ -25,6 +28,9 @@ capabilities = {
     .then((result) => {
         console.log('result:', result, '\n');
         console.log('return caps:', capabilities, '\n');
+
+        // store device in JSON for further use
+        fs.writeFileSync(filePath, JSON.stringify(device, null, 2));
         return capabilities;
     })
     .catch((error) => {

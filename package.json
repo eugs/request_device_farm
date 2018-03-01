@@ -16,9 +16,7 @@
     "url": "https://github.com/eugs/req_device/issues"
   },
   "homepage": "https://github.com/eugs/req_device#readme",
-  "devDependencies": {
-
-  },
+  "devDependencies": {},
   "dependencies": {
     "request": "^2.83.0",
     "minimist": "^1.2.0"
